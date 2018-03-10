@@ -1,0 +1,324 @@
+/*Original CSS without sass*/
+
+/*body background*/
+body{
+	background: rgb(255,116,0); /* Old browsers */
+	background: -moz-linear-gradient(-45deg, rgb(255,116,0) 0%, rgb(255,116,0) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg, rgb(255,116,0) 0%,rgb(255,116,0) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg, rgb(255,116,0) 0%,rgb(255,116,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff7400', endColorstr='#ff7400',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+/*disabling buttons after round end*/
+.disabled{
+	cursor: not-allowed;
+	opacity: 0.6;
+}
+
+/*container of page*/
+.container-fluid{
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+/*Start Section*/
+/*heading*/
+.heading{
+	text-align: center;
+	font-family: 'Coiny', cursive;
+	font-size: 3em;
+	font-weight: bold;
+	color: yellow;
+	padding: 2%;
+	background: ;
+	position: absolute;
+	top: 2%;
+}
+
+/*container of start section and result section*/
+#startSection, #resultSection{
+	border: 1px solid black;
+	border-radius: 10px;
+	background: white;
+	text-align: center;
+	padding: 2%;
+}
+
+/*number of rounds*/
+.roundDetailsStart .subHead{
+	font-family: arial;
+	font-weight: bold;
+	font-size: 1.5em;
+	margin-right: 10px;
+}
+
+/*taking rounds from user*/
+.roundDetailsStart input{
+	width: 50px;height: 25px;
+	border: 1px solid black;
+	border-radius: 5px;
+	position: relative;
+	top: -4px;
+	padding: 0 5px;
+	font-size: 18px;
+	text-align: center;
+}
+
+/*start button*/
+#startSection button{
+	margin-top: 30px;
+	text-transform: uppercase;
+	font-family: arial;
+	font-size: 1.3em;
+	font-weight: bold;
+	height: 40px;
+	background: #0069D9;
+	color: white;
+	border-radius: 50px;
+	border: 1px solid #0069D9;
+	padding: 2% 4%;
+}
+
+#startSection button:focus{
+	transition: 0.7s;
+	box-shadow: 0px 2px 5px 6px #5CA7F2;
+	outline: 0;
+}
+
+#startSection button:hover{
+	box-shadow: none;	
+	transition: 0.5s;
+	background: #5ca7f2;
+	cursor: pointer;
+}
+
+/*Invalid messsage section*/
+#startSection .message{
+	color: red;
+	font-family: arial;
+	font-weight: bold;
+}
+
+/*Game Section*/
+/*div containing game*/
+#gameSection{
+	display: none;
+	background: white;
+	border: 1px solid black;
+	border-radius: 10px;
+	align-self: stretch;
+	padding: 1%;
+	margin: 4%;
+}
+
+/*display round and score details*/
+#gameSection .head{
+	background: grey;
+	color: white;
+	border-radius: 10px;
+	padding: 1%;
+	font-size: 1.7em;
+	font-family: 'Oswald', sans-serif;
+	text-align: center;
+	margin-bottom: 7%;
+}
+
+/*floating user score, user choice on left*/
+#user, .userChoice, .scoreUser{
+	float: left;
+	width: 50%;
+}
+
+/*Main section of game div*/
+#gameSection .main{
+	text-align: center;
+}
+
+/*Choices area*/
+.main .buttons{
+	background: ;
+	margin-bottom: 25px;
+}
+
+/*Choices button*/
+.main button{
+	text-transform: uppercase;
+	font-family: arial;
+	font-size: 1.5em;
+	font-weight: bold;
+	background: #0069D9;
+	color: white;
+	border-radius: 10px;
+	border: 1px solid #0069D9;
+	margin: 0 10px;
+	padding: 1% 2%;
+}
+
+.main button:focus{
+	transition: 0.5s;
+	box-shadow: 0px 2px 5px 6px #5CA7F2;
+	outline: 0;
+}
+
+.main button:hover{
+	box-shadow: none;
+	cursor: pointer;
+	transition: 0.5s;
+	background: #5ca7f2;
+}
+
+/*choices section*/
+.main .choice{
+	font-size: 1.5em;
+	font-family: 'Roboto', sans-serif;
+	margin-bottom: 25px;
+}
+
+/*Result of each round*/
+.main .result #roundResult{
+	font-size: 1.2em;
+	font-family: arial;
+	font-weight: bold;
+	color: red; 
+	text-transform: uppercase;
+	line-height: 30px;
+}
+
+/*ResultSection*/
+/*div containing result*/
+#resultSection{
+	display: none;
+	align-self: stretch;
+	margin: 4%;
+}
+
+/*heaader displaying final scores*/
+#resultSection .headFinal{
+	background: grey;
+	color: white;
+	border-radius: 10px;
+	padding: 1%;
+	font-size: 1.7em;
+	font-family: 'Oswald', sans-serif;
+	text-align: center;
+	margin-bottom: 5%;
+}
+
+/*Display winner of game*/
+#resultSection .finalResult{
+	font-size: 1.5em;
+	font-family: arial;
+	font-weight: bold;
+	color: red; 
+	text-transform: uppercase;
+	margin-bottom: 4%;
+}
+
+/*restart button*/
+#resultSection button{
+	text-transform: uppercase;
+	font-family: arial;
+	font-size: 1.3em;
+	font-weight: bold;
+	background: #0069D9;
+	color: white;
+	border-radius: 50px;
+	border: 1px solid #0069D9;
+	padding: 1% 2%;
+}
+
+#resultSection button:focus{
+	transition: 0.5s;
+	box-shadow: 0px 2px 5px 6px #5CA7F2;
+	outline: 0;
+}
+
+#resultSection button:hover{
+	box-shadow: none;
+	cursor: pointer;
+	transition: 0.5s;
+	background: #5ca7f2;
+	outline: 0;
+}
+
+/*Width less than 1000px*/
+@media screen and (max-width: 1000px){
+
+	/*title of game*/
+	.heading{
+		font-size: 2.3em;
+	}
+}
+
+/*Width less than 768px*/
+@media screen and (max-width: 768px) {
+
+	/*title of game*/
+	.heading{
+		font-size: 2em;
+	}
+
+	/*Header area of game and result section*/
+	#gameSection .head, #resultSection .headFinal{
+		padding: 20px 1%;
+		font-size: 1.5em;
+	}
+
+	/*margin bottom of 1st line of header*/
+	#gameSection .head .roundDetailsGame, .headFinal .finaltitle{
+		margin-bottom: 10px;
+	}
+
+}
+
+/*Width less than 480px*/
+@media screen and (max-width: 480px){
+
+	/*Div of Start section*/
+	#startSection{
+		margin: 4%;
+		padding: 20px;
+	}
+
+	/*adjust input box*/
+	.roundDetailsStart input{
+		margin-top: 20px;
+		padding: 0 5px;
+	}
+
+	/*Adjust font size of buttons*/
+	#startSection button, #resultSection button{
+		font-size: 1em;
+	}
+
+	/*Adjust position of div of game section*/
+	#gameSection{
+		position: relative;
+		top: 25px;
+	}
+
+	/*Adjust margins of choices buttons*/
+	#gameSection .main button{
+		margin: 10px;
+	}
+}
+
+/*width less than 768px and landscape orientation*/
+@media only screen and (max-width: 768px) and (orientation: landscape){
+
+	/*Adjust position of game Section*/
+	#gameSection{
+		position: relative;
+		top: 100px;
+	}
+
+	/*Adjust position of result Section*/
+	#resultSection{
+		position: relative;
+		top: 100px;
+	}
+}
+

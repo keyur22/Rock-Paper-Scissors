@@ -1,0 +1,319 @@
+@import "compass";
+@import "variables";
+@import "placeholders";
+
+//body
+body{
+	background-color: rgb(255,116,0); // Old browsers
+	@include filter-gradient(#ff7400, #ff7400, horizontal); // IE6-9 fallback on horizontal gradient
+	@include background-image(linear-gradient(left top, rgb(255,116,0) 0%,rgb(255,116,0) 100%));
+}
+
+//disabling buttons after round end
+.disabled{
+	cursor: not-alllowed;
+	opacity: 0.6;
+}
+
+//container of page
+.container-fluid{
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+//Start Section
+//heading
+.heading{
+	text-align: center;
+	font-family: 'Coiny', cursive;
+	font-size: 3em;
+	font-weight: bold;
+	color: yellow;
+	padding: 2%;
+	position: absolute;
+	top: 2%;
+}
+
+//container of start section
+#startSection{
+	@extend %div-style;	
+	padding: 2%;
+
+	//round details of start section
+	.roundDetailsStart{
+
+		//number of rounds
+		.subHead{
+			font-family: arial;
+			font-weight: bold;
+			font-size: 1.5em;
+			margin-right: 10px;
+		}
+
+		//taking input from user
+		input{
+			width: 50px;height: 25px;
+			border: 1px solid black;
+			border-radius: 5px;
+			position: relative;
+			top: -4px;
+			padding: 0 5px;
+			font-size: 18px;
+			text-align: center;
+		}
+	}//End RoundDetails
+
+	//start button
+	button{
+		margin-top: 30px;
+		text-transform: uppercase;
+		font-family: arial;
+		font-size: 1.3em;
+		font-weight: bold;
+		height: 40px;
+		background: $button-background;
+		color: white;
+		border-radius: 50px;
+		border: 1px solid $button-background;
+		padding: 2% 4%;
+
+		&:focus{
+			@extend %button-focus;
+		}
+
+		&:hover{
+			@extend %button-hover;
+		}
+	}
+
+	//Invalid message section
+	.message{
+		color: red;
+		font-weight: bold;
+	}
+
+}//End StartSection
+
+//div containing game
+#gameSection{
+	@extend %div-style;
+	display: none;
+	align-self: stretch;
+	padding: 1%;
+	margin: 4%;
+
+	//heading displaying round and score details
+	.head{
+		background: grey;
+		color: white;
+		border-radius: 10px;
+		padding: 1%;
+		font-size: 1.7em;
+		font-family: 'Oswald', sans-serif;
+		text-align: center;
+		margin-bottom: 7%;
+	}
+
+	//floating user score on left
+	#user{
+		float: left;
+		width: 50%;
+	}
+
+	//main section of game
+	.main{
+		text-align: center;
+
+			//buttons in main section
+			.buttons{
+				margin-bottom: 25px;
+			}
+
+			button{
+				text-transform: uppercase;
+				font-family: arial;
+				font-size: 1.5em;
+				font-weight: bold;
+				background: $button-background;
+				color: white;
+				border-radius: 10px;
+				border: 1px solid $button-background;
+				margin: 0 10px;
+				padding: 1% 2%;
+
+				&:focus{				
+					@extend %button-focus;
+				}
+
+				&:hover{
+					@extend %button-hover;
+				}
+			}
+
+			//choices section 
+			.choice{
+				font-size: 1.5em;
+				font-family: 'Roboto', sans-serif;
+				margin-bottom: 25px;
+
+				//float userchoice on left
+				.userChoice{
+					@extend #user;
+				}
+			}
+
+			//result of round
+			.result #roundResult{
+				font-size: 1.2em;
+				font-family: arial;
+				font-weight: bold;
+				color: red; 
+				text-transform: uppercase;
+				line-height: 30px;
+			}
+	}
+
+}
+
+//container of result section
+#resultSection{
+	@extend %div-style;
+	padding: 2%;
+	display: none;
+	align-self: stretch;
+	margin: 4%;
+
+	//head section displaying scores
+	.headFinal{
+		background: grey;
+		color: white;
+		border-radius: 10px;
+		padding: 1%;
+		font-size: 1.7em;
+		font-family: 'Oswald', sans-serif;
+		text-align: center;
+		margin-bottom: 5%;
+
+		//floating user score on left
+		.scoreUser{
+			@extend #user;
+		}
+
+	}
+
+	//Message section displaying winner
+	.finalResult{
+		font-size: 1.5em;
+		font-family: arial;
+		font-weight: bold;
+		color: red; 
+		text-transform: uppercase;
+		margin-bottom: 4%;
+	}
+
+	//restart button
+	button{
+		text-transform: uppercase;
+		font-family: arial;
+		font-size: 1.3em;
+		font-weight: bold;
+		background: #0069D9;
+		color: white;
+		border-radius: 50px;
+		border: 1px solid #0069D9;
+		padding: 1% 2%;
+
+		&:focus{
+			@extend %button-focus;
+		}
+
+		&:hover{
+			@extend %button-hover;
+		}
+	}
+	
+}
+
+//Width less than 1000px
+@media only screen and (max-width: 1000px){
+
+	//title of game
+	.heading{
+		font-size: 2.3em;
+	}
+
+}
+
+//width less than 768px
+@media only screen and (max-width: 768px){
+
+	//title of game
+	.heading{
+		font-size: 2em;
+	}
+
+	//Header area of game and result section
+	#gameSection .head, #resultSection .headFinal{
+		padding: 20px 1%;
+		font-size: 1.5em;
+	}
+
+	//margin bottom of 1st line of header
+	#gameSection .head .roundDetailsGame, .headFinal .finaltitle{
+		margin-bottom: 10px;
+	}
+
+}
+
+//width less than 480px
+@media only screen and (max-width:480px){
+
+	//Div of Start section
+	#startSection{
+		margin: 4%;
+		padding: 20px;
+	}
+
+	//adjust input box
+	.roundDetailsStart input{
+		margin-top: 20px;
+		padding: 0 5px;
+	}
+
+	//adjust font-size of buttons
+	#startSection button, #resultSection button{
+		font-size: 1em;
+	}
+
+	//Adjust position of div of game section
+	#gameSection{
+		position: relative;
+		top: 25px;
+	}
+
+	//Adjust margin of choices buttons
+	#gameSection .main button{
+		margin: 10px;
+	}
+
+}
+
+//width less than 768px and landscape orientation
+@media only screen and (max-width: 768px) and (orientation:landscape){
+
+	//Adjust position of game Section
+	#gameSection{
+		position: relative;
+		top: 100px;
+	}
+
+	//adjust position of result section 
+	#resultSection{
+		position: relative;
+		top: 100px;
+	}
+}
+

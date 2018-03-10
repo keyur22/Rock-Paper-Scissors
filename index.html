@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+
+	<!-- Set character encoding for the document -->
+	<meta charset = "utf-8">
+
+	<!-- Instruct Internet Explorer to use its latest rendering engine -->
+	<meta http-equiv = "x-ua-compatible" content = "ie=edge">
+	
+	<!-- Viewport for responsive web design -->
+	<meta content = "width = device-width, initial-scale = 1, shrink-to-fit = no" name = "viewport">
+
+	<!-- Document Title -->
+	<title>Rock Paper Scissors</title>
+
+	<!-- Meta Description -->
+	<meta name="description" content="A simple implementation of grade school classic 'rock paper scissors'">
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Oswald:600" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
+
+	<!-- Custom CSS -->
+	<link rel = "stylesheet" type = "text/css" href = "css/reset.css">
+	<link rel = "stylesheet" type = "text/css" href = "css/style1.css">
+
+</head>
+<body>
+	<div class = "container-fluid">
+
+		<div class = "heading">
+			Classic ROCK PAPER SCISSORS Game
+		</div>	
+		
+		<div id = "startSection">
+			<div class = "roundDetailsStart">
+				<span class = "subHead">Number Of Rounds</span>
+				<input type = "text" id = "roundNo">
+			</div>
+			<button>Start Game</button>
+			<div class = "message"></div>
+		</div>	
+
+		<div id = "gameSection">
+		<!-- Display round and score details -->
+			<div class = "head">
+				<div class = "roundDetailsGame">
+					Round   <span id = "roundNumber"></span>/<span id = "roundTotal"></span>
+				</div>
+				<div id = "user">
+					Your Score:  <span class = "userScore"></span>
+				</div>
+				<div id = "comp">
+					Comp Score:  <span class = "compScore"></span>
+				</div>
+			</div>
+
+			<!-- Display choices, selection and round result-->
+			<div class = "main">
+				<div class = "buttons">
+					<button id = "rock"  value = "rock">ROCK</button>
+					<button id = "paper" value = "paper">PAPER</button>
+					<button id = "scissors" value = "scissors">SCISSORS</button>
+				</div>
+				<div class = "choice">
+					<div class = "userChoice">
+						Your Choice:  <span id = "choiceUser"></span>
+					</div>
+					<div class = "compChoice">
+						Comp Choice:  <span id = "choiceComp"></span>
+					</div>
+				</div>
+				<div class = "result">
+					<span id = "roundResult"></span>
+				</div>
+			</div>
+			
+		</div>
+
+		<div id ="resultSection">
+			<div class = "headFinal">
+				<div class = "finaltitle">Final Scores</div>
+				<div class = "scoreUser">
+					You:  <span class = "userFinal"></span>	
+				</div>
+				<div class = "scoreComp">
+					Computer: <span class = "compFinal"></span>
+				</div>
+			</div>
+			<div class = "finalResult"></div>
+			<button id = "restart">Restart Game</button>
+		</div>
+	
+</div>
+	<script type = "text/javascript" src = "js/app.js"></script>
+</body>
+</html>

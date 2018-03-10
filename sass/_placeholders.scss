@@ -1,0 +1,20 @@
+//Placeholders
+%div-style{
+	border: 1px solid black;
+	border-radius: 10px;
+	background: white;
+	text-align: center;
+}
+
+%button-focus{
+	transition: 0.5s;
+	box-shadow: 0px 2px 5px 6px #5CA7F2;
+	outline: 0;
+}
+
+%button-hover{
+	box-shadow: none;
+	cursor: pointer;
+	transition: 0.5s;
+	background: lighten($button-background, 30%);
+}
